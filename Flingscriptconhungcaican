@@ -1,0 +1,53 @@
+-- made by HMT
+local starterGui = game:GetService("StarterGui")
+
+-- made by HMT
+local notificationText = "fling by HMT"
+
+-- made by HMT
+starterGui:SetCore("SendNotification", {
+    Title = "fling script",
+    Text = notificationText,
+    Icon = "", -- Đặt biểu tượng ở đây nếu cần
+    Duration = 30 -- Thời gian hiển thị (giây)
+})
+ wait(25)
+ 
+local script1 = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Minhthangpro12vn/Flyfix/main/Flyfixandsry'))()"
+local script2 = "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()"
+local script3 = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Minhthangpro12vn/Invisflingbantumlum/main/Fling%20cmd'))()"
+local script4 = " loadstring(game:HttpGet('https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt'))()"
+
+local function runScript(script)
+    local func, err = loadstring(script)
+    if not func then
+        print("Error compiling script:", err)
+        return
+    end
+    func()
+end
+
+local function executeScriptsAsync()
+    local co1 = coroutine.create(function()
+        runScript(script1)
+    end)
+    
+    local co2 = coroutine.create(function()
+        runScript(script2)
+    end)
+    
+    local co3 = coroutine.create(function()
+        runScript(script3)
+    end)
+    
+    local co4 = coroutine.create(function()
+        runScript(script4)
+    end)
+    
+    coroutine.resume(co1)
+    coroutine.resume(co2)
+    coroutine.resume(co3)
+    coroutine.resume(co4)
+end
+
+executeScriptsAsync()
